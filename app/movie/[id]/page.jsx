@@ -14,15 +14,12 @@ export async function generateStaticParams() {
 
     const params = res.results.map((movie) => {
         return {
-            params: {
-                id: movie.id.toString()
-            }
+            movie: toString(movie.id)
         }
     })
 
     return {
-        paths: params,
-        fallback: false
+        params
     }
 }
 
